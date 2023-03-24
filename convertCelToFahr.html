@@ -84,10 +84,21 @@ ul {
         }
 </style>
 <script>
-    function FahrenheitToCelsius(f) {
-        return (5/9) * (f-32);
+    function FahrenheitToCelsius(valNum) {
+        valNum = parseFloat(valNum);
+    
+    document.getElementById("outputCelsius").innerHTML = (valNum-32)/1.8;
+    
+    document.forms.f.getElementById('outputCelsius').value = (valNum-32)/1.8;
     }
-    document.getElementById("fahrenheit").innerHTML = FahrenheitToCelsius("tocelsius");
+
+    function CelsiusToFahrenheit(valNum) {
+        valNum = parseFloat(valNum);
+    
+        document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+    
+    //document.forms.f.getElementById('outputCelsius').value = (valNum-32)/1.8;
+    }
 </script>
 </head>
 <body>
@@ -110,18 +121,18 @@ ul {
 <h3>Convert Temperature with Form</h3>
 
 <div>
-  <form action="">
-    <label for="celsius">Degre Celsius</label>
-    <input type="text" id="celsius" name="tocelsius" placeholder="°C..">
+  <form name="f">
+    <label for="celsius">Degre Celsius<span id="outputCelsius"></span></label>
+    <input type="number" id="inputCelsius" name="tocelsius" onchange="CelsiusToFahrenheit(this.value)" oninput= "CelsiusToFahrenheit(this.value)" placeholder="°C..">
 
-    <label for="fahrenheit">Degre Fahrenheit</label>
-    <input type="text" id="fahrenheit" name="tofahrenheit" placeholder="°F..">
+    <label for="fahrenheit">Degre Fahrenheit<span id="outputFahrenheit"></span></label>
+    <input type="number" id="inputFahrenheit" name="tofahrenheit" oninput= "FahrenheitToCelsius(this.value)" onchange="FahrenheitToCelsius(this.value)" placeholder="°F..">
 
     
     </select>
   
     <input type="submit" value="CelsiusToFahrenheit">
-    <input type="submit" onclick= "FahrenheitToCelsius(f)" value="FahrenheitToCelsius">
+    <input type="submit" onclick = "FahrenheitToCelsius(tofahrenheit)" value="FahrenheitToCelsius">
   </form>
 </div>
 
