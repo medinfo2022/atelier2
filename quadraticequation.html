@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <!-- Favicon SORETRAS-->
         <link rel="icon" type="image/png" href="company_logo_round.png" />
-        <title> Product </title> 
+        <title> Quadratic Equation Mathematic </title> 
         <style>
           input[type=text], select {
   width: 100%;
@@ -95,6 +95,60 @@ div {
         }
 
         </style>
+        <script>
+            function foncmath() {
+            // program to solve quadratic equation
+            let root1, root2;
+
+            // take input from the user
+            //let a = prompt("Enter the first number: ");
+            //let b = prompt("Enter the second number: ");
+            //let c = prompt("Enter the third number: ");
+
+            var a = document.getElementById("a").value ;
+            var b = document.getElementById("b").value ;
+            var c = document.getElementById("c").value ;
+
+            // calculate discriminant
+            let discriminant = b * b - 4 * a * c;
+
+            // condition for real and different roots
+            if (discriminant > 0) {
+                root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+                // result
+                //console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+                var message = 'Les racines de l/équation quadratique sont ' + root1 + ' et ' + root2 ;
+                document.getElementById("result").innerHTML =  message ;
+                
+            }
+
+            // condition for real and equal roots
+            else if (discriminant == 0) {
+                root1 = root2 = -b / (2 * a);
+
+                // result
+                //console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+                var message1 = 'Les racines de l/équation quadratique sont ' + root1 + ' et ' + root2 ;
+                document.getElementById("result").innerHTML =  message1 ;
+            }
+
+            // if roots are not real
+            else {
+                let realPart = (-b / (2 * a)).toFixed(2);
+                let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+
+                // result
+               /* console.log(
+                `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
+            );*/
+                var message2 = 'Les racines de l/équation quadratique sont ' + realPart + imagParti + ' et ' + realPart - imagParti ;
+                document.getElementById("result").innerHTML =  message2 ;
+                //document.getElementById("result").innerHTML = The roots of quadratic equation are realPart + imagParti and realPart - imagParti ;
+            }
+        }
+        </script>
         
         </head>
 <body>
@@ -106,10 +160,10 @@ div {
 
     <ul>
         <li><a href="index.html">Acceuil</a></li>
-        <li><a class="active" href="product.html">Programme</a></li>
+        <li><a href="product.html">Programme</a></li>
         <li><a href="convertCelToFahr.html">Exercice 1</a></li>
         <li><a href="#">Exercice 2</a></li>
-        <li><a href="quadraticequation.html">Exercice 3</a></li>
+        <li><a class="active" href="quadraticequation.html">Exercice 3</a></li>
         <li><a href="TicTacToe.html">Exercice 4</a></li>
         <li><a href="contact.html">Contact</a></li>
     
@@ -122,33 +176,25 @@ div {
 </div>
 
  <div id="articles">
-<h2>Liste des produits</h2>
+    <h2 style="text-align: center;">Quadratic Equation Mathematic</h2>
 
+    <h3 style="text-align: center;">ax² + bx + c = 0</h3> 
+
+    <form>
+
+    <input id="a" type="number" placeholder="Entrer la val de a" />
+    <input id="b" type="number" placeholder="Entrer la val de b" />
+    <input id="c" type="number" placeholder="Entrer la val de c" />      
     
+    <h3 style="text-align: left; padding: 20px;">Résultat : <br>
+    <span id="result" style="color: #04AA6D;"></span></h3>
+
+    <button type="button" onclick="foncmath()"> RESOUDRE </button>
+    </form>
     
-<table style="width:100%">
-  <tr>
-    <th>Ref.Produit</th>
-    <th>Libéllé</th> 
-    <th>Qté</th>
-  </tr>
-  <tr>
-    <td>21G223</td>
-    <td>Valve de Frein</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>22H241</td>
-    <td>Contacteur de Frein</td>
-    <td>22</td>
-  </tr>
-  <tr>
-    <td>52K635</td>
-    <td>Durite de turbo</td>
-    <td>30</td>
-  </tr>
-</table>
 </div>
+
+
 
 </body>
 
