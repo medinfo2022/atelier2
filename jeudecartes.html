@@ -1,0 +1,227 @@
+
+<!DOCTYPE html >
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Favicon SORETRAS-->
+        <link rel="icon" type="image/png" href="company_logo_round.png" />
+        <title> Jeu de cartes </title> 
+        <style>
+          
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: #111;
+        }
+        
+        .active {
+          background-color: #04AA6D;
+        }
+
+       
+
+.container {
+          display: table;
+          width: 100%;
+        }
+
+        .table-row {
+          display: table-row;
+          height: 100px;
+
+        }
+
+        .table-cell {
+          border: 1px solid;
+          background: #000000;
+          display: table-cell;
+          
+        }
+
+        body {
+            background: lightgray;
+            
+        }
+
+        div.jeu {
+   height: 520px;
+   width:  520px;
+   margin: 2em auto 2em auto;
+ }
+
+div.case {
+  height: 100px;
+  width:  100px;
+  border: 1px solid black;
+  float: left;
+ margin: 10px;
+   background-color: #9999FF;
+}
+ img {
+   height: 100px;
+  width:  100px;
+   visibility: hidden;
+ }
+
+hr {
+   clear: both;
+   visibility: hidden;
+ }
+
+        </style>
+        <script>
+
+var precedente = -1;
+ var attente    = 0;
+ var img;
+ var imgp;
+
+function cachephotos () {
+  img.style.visibility = 'hidden';
+  imgp.style.visibility = 'hidden';
+   attente = 0;
+ }
+
+function clic (n) {
+  if (attente != 1) {
+       img = document.getElementById('img'+n);
+       img.style.visibility = 'visible';
+       
+       if (precedente<0) {
+       precedente = n;
+       document.getElementById("tour").innerHTML = "Mohamed" ;
+     } else {
+        imgp  = document.getElementById('img'+precedente);
+        document.getElementById("tour").innerHTML = "Ordinateur" ;
+        var score = 0;
+      if (imgp.src==img.src) { 
+          score = score + 1;
+          document.getElementById("score").innerHTML = score ;
+       } else {
+        attente = 1;
+           setTimeout('cachephotos();',800);
+        }
+        precedente = -1;
+        }
+   }
+ }
+
+ function initgame () {
+   for (var i=1 ; i<=200 ; i++) {
+
+    var n1    = Math.ceil(16*Math.random());
+    var n2    = Math.ceil(16*Math.random());
+    var img1  = document.getElementById('img'+n1);
+    var img2  = document.getElementById('img'+n2);
+    var src1  = img1.src;
+    var src2  = img2.src;
+     
+     img1.src = src2;
+     img2.src = src1;
+   }
+}
+
+        </script>
+        
+        </head>
+        <body onload="initgame();">
+    
+   
+    
+    <a href="https://soretras.com.tn" target="_blank"><img src="logo.png" style="margin-left: 50px; margin-top: 50px;"></a>
+    <img src="tunisie.png" style="margin-left: 1170px; margin-top: 50px;">
+
+    <ul>
+        <li><a href="index.html">Acceuil</a></li>
+        <li><a href="product.html">Programme</a></li>
+        <li><a href="convertCelToFahr.html">Exercice 1</a></li>
+        <li><a class="active" href="jeudecartes.html">Exercice 2</a></li>
+        <li><a href="quadraticequation.html">Exercice 3</a></li>
+        <li><a href="TicTacToe.html">Exercice 4</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    
+      </ul>
+
+    <div id="entete">
+    
+    <img  class="video_entete" src="background_soretras.jpg" width="100%"/> 
+    
+</div>
+
+<h1 style="text-align: center;">Jeu de mémoire avec les cartes</h1>
+
+<h3 style="text-align: center;">Joueur 1 : Mohamed</h3>
+<h3 style="text-align: center;">Joueur 2 : Ordinateur</h3>
+<h3 style="text-align: center;">Maintenant le tour de :<span id="tour"></span></h3>
+<h3 style="text-align: center;">Score de <span id="tour"></span> : <span id="score"></span></h3>
+ <div class="jeu">
+ <div class="case" onclick="clic(1);"><img id="img1"  src="images/chat.jpg"       /></div>
+ <div class="case" onclick="clic(2);"><img id="img2"  src="images/chat.jpg"       /></div>
+ <div class="case" onclick="clic(3);"><img id="img3"  src="images/chien.jpg"      /></div>
+ <div class="case" onclick="clic(4);"><img id="img4"  src="images/chien.jpg"      /></div>
+ <hr />
+ <div class="case" onclick="clic(5);"><img id="img5"  src="images/grenouille.jpg" /></div>
+ <div class="case" onclick="clic(6);"><img id="img6"  src="images/grenouille.jpg" /></div>
+ <div class="case" onclick="clic(7);"><img id="img7"  src="images/autruche.jpg"   /></div>
+ <div class="case" onclick="clic(8);"><img id="img8"  src="images/autruche.jpg"   /></div>
+ <hr />
+ <div class="case" onclick="clic(9);"><img id="img9"  src="images/souris.jpg"     /></div>
+ <div class="case" onclick="clic(10);"><img id="img10" src="images/souris.jpg"    /></div>
+ <div class="case" onclick="clic(11);"><img id="img11" src="images/elephant.jpg"  /></div>
+ <div class="case" onclick="clic(12);"><img id="img12" src="images/elephant.jpg"  /></div>
+ <hr />
+ <div class="case" onclick="clic(13);"><img id="img13" src="images/lion.jpg"    /></div>
+ <div class="case" onclick="clic(14);"><img id="img14" src="images/lion.jpg"    /></div>
+ <div class="case" onclick="clic(15);"><img id="img15" src="images/lapin.jpg"     /></div>
+ <div class="case" onclick="clic(16);"><img id="img16" src="images/lapin.jpg"     /></div>
+ </div>
+
+
+
+</body>
+
+<footer class="container">
+    <div class="table-row">
+      <div class="table-cell">
+        <address style="color: white;">
+          Soretras (Siège Social):<br>
+          Route Menzel Chaker Km 0,5 Rue Mouna<br>
+          Sfax - Tunisie <br>
+          Tél. : (+216) 74 240 754
+  
+        </address>
+       
+        <a href="https://www.facebook.com/soretras/">
+          <img src="icon-facebook.png" alt="facebook" width="50px" height="50px" style="margin-left: 80%;">
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="icon-insta.jpg" alt="facebook" width="50px" height="50px">
+        </a>
+        <a href="https://twitter.com/">
+          <img src="icon-twitter.jpg" alt="facebook" width="50px" height="50px">
+        </a>
+     
+      </div>
+    </div>
+  
+  </footer>
+
+</html>
