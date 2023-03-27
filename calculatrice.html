@@ -32,6 +32,10 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+button  {
+    width: 100%;
+}
+
 div {
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -95,6 +99,18 @@ div {
         }
 
         </style>
+        <script>
+            function calcul(){
+                document.getElementById("result").value += event.target.id;
+                    
+                    
+                
+            }
+
+            function egal() {
+                document.getElementById("result").value = eval(document.event.target.id);
+            }
+        </script>
         
         </head>
 <body>
@@ -106,12 +122,12 @@ div {
 
     <ul>
         <li><a href="index.html">Acceuil</a></li>
-        <li><a class="active" href="product.html">Programme</a></li>
+        <li><a href="product.html">Programme</a></li>
         <li><a href="convertCelToFahr.html">Exercice 1</a></li>
         <li><a href="jeudecartes.html">Exercice 2</a></li>
         <li><a href="quadraticequation.html">Exercice 3</a></li>
         <li><a href="TicTacToe.html">Exercice 4</a></li>
-        <li><a href="calculatrice.html">Exercice 5</a></li>
+        <li><a class="active" href="calculatrice.html">Exercice 5</a></li>
         <li><a href="contact.html">Contact</a></li>
     
       </ul>
@@ -123,30 +139,39 @@ div {
 </div>
 
  <div id="articles">
-<h2>Liste des produits</h2>
+<h2>Calculatrice</h2>
 
     
     
 <table style="width:100%">
+  
   <tr>
-    <th>Ref.Produit</th>
-    <th>Libéllé</th> 
-    <th>Qté</th>
+    <td><input type="text" id="result" placeholder="Resultat"/></td>
+    <td colspan="3"><button onclick="calcul()" id="CE">CE</button></td>
   </tr>
   <tr>
-    <td>21G223</td>
-    <td>Valve de Frein</td>
-    <td>50</td>
+    <td><button onclick="calcul()" onclick="calcul()" id="1">1</button></td>
+    <td><button onclick="calcul()" onclick="calcul()" id="2">1</button></td>
+    <td><button onclick="calcul()" id="3">1</button></td>
+    <td><button onclick="calcul()" id="plus">+</button></td>
   </tr>
   <tr>
-    <td>22H241</td>
-    <td>Contacteur de Frein</td>
-    <td>22</td>
+    <td><button onclick="calcul()" id="1">4</button></td>
+    <td><button onclick="calcul()" id="2">5</button></td>
+    <td><button onclick="calcul()" id="3">6</button></td>
+    <td><button onclick="calcul()" id="-">-</button></td>
   </tr>
   <tr>
-    <td>52K635</td>
-    <td>Durite de turbo</td>
-    <td>30</td>
+    <td><button onclick="calcul()" id="7">7</button ></td>
+    <td><button onclick="calcul()" id="8">8</button ></td>
+    <td><button onclick="calcul()" id="9">9</button ></td>
+    <td><button onclick="calcul()" id="/">/</button ></td>
+  </tr>
+  <tr>
+    <td><button onclick="calcul()" id="0">0</button ></td>
+    <td><button onclick="calcul()" id=".">.</button ></td>
+    <td><button onclick="egal()" id="=">=</button ></td>
+    <td><button onclick="calcul()" id="*">*</button ></td>
   </tr>
 </table>
 </div>
