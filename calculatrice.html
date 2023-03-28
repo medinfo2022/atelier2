@@ -102,13 +102,15 @@ div {
         <script>
             function calcul(){
                 document.getElementById("result").value += event.target.id;
-                    
-                    
-                
+                          
             }
 
             function egal() {
-                document.getElementById("result").value = eval(document.event.target.id);
+                document.getElementById("result").value = eval(document.getElementById("result").value);
+            }
+
+            function reset(){
+                document.getElementById("result").value="";
             }
         </script>
         
@@ -147,18 +149,18 @@ div {
   
   <tr>
     <td><input type="text" id="result" placeholder="Resultat"/></td>
-    <td colspan="3"><button onclick="calcul()" id="CE">CE</button></td>
+    <td colspan="3"><button onclick="reset()" id="CE">CE</button></td>
   </tr>
   <tr>
-    <td><button onclick="calcul()" onclick="calcul()" id="1">1</button></td>
-    <td><button onclick="calcul()" onclick="calcul()" id="2">2</button></td>
+    <td><button onclick="calcul()" id="1">1</button></td>
+    <td><button onclick="calcul()" id="2">2</button></td>
     <td><button onclick="calcul()" id="3">3</button></td>
     <td><button onclick="calcul()" id="+">+</button></td>
   </tr>
   <tr>
-    <td><button onclick="calcul()" id="1">4</button></td>
-    <td><button onclick="calcul()" id="2">5</button></td>
-    <td><button onclick="calcul()" id="3">6</button></td>
+    <td><button onclick="calcul()" id="4">4</button></td>
+    <td><button onclick="calcul()" id="5">5</button></td>
+    <td><button onclick="calcul()" id="6">6</button></td>
     <td><button onclick="calcul()" id="-">-</button></td>
   </tr>
   <tr>
@@ -170,7 +172,7 @@ div {
   <tr>
     <td><button onclick="calcul()" id="0">0</button ></td>
     <td><button onclick="calcul()" id=".">.</button ></td>
-    <td><button onclick="egal()" id="=">=</button ></td>
+    <td><button onclick="egal()"   id="=">=</button ></td>
     <td><button onclick="calcul()" id="*">*</button ></td>
   </tr>
 </table>
