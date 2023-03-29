@@ -1,42 +1,19 @@
-
-<!DOCTYPE html >
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <!-- Favicon SORETRAS-->
-        <link rel="icon" type="image/png" href="company_logo_round.png" />
-        <title> Product </title> 
-        <style>
-          input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>MasterMind</title>
+<meta charset="UTF-8" />
+<!-- Favicon SORETRAS-->
+<link rel="icon" type="image/png" href="company_logo_round.png" />
+<script src="js/MasterMind.js"></script>
+<script>
+    /* on load scripts */
+    window.onload = function() {
+        MasterMind.initialise();
+    }
+</script>
+<link href="css/MasterMind.css" type="text/css" rel="stylesheet" />
+<style>
         ul {
           list-style-type: none;
           margin: 0;
@@ -65,54 +42,21 @@ div {
           background-color: #04AA6D;
         }
 
-        th, td, tr {
-  border-style:solid;
-  border-color: #96D4D4;
-  text-align: center;
-}
-
-.container {
-          display: table;
-          width: 100%;
-        }
-
-        .table-row {
-          display: table-row;
-          height: 100px;
-
-        }
-
-        .table-cell {
-          border: 1px solid;
-          background: #000000;
-          display: table-cell;
-          
-        }
-
-        body {
-            background: lightgray;
-            
-        }
-
-        </style>
-        
-        </head>
+</style>
+</head>
 <body>
-    
-   
-    
     <a href="https://soretras.com.tn" target="_blank"><img src="logo.png" style="margin-left: 50px; margin-top: 50px;"></a>
     <img src="tunisie.png" style="margin-left: 1170px; margin-top: 50px;">
 
     <ul>
         <li><a href="index.html">Acceuil</a></li>
-        <li><a class="active" href="product.html">Programme</a></li>
+        <li><a href="product.html">Programme</a></li>
         <li><a href="convertCelToFahr.html">Exercice 1</a></li>
         <li><a href="jeudecartes.html">Exercice 2</a></li>
         <li><a href="quadraticequation.html">Exercice 3</a></li>
         <li><a href="TicTacToe.html">Exercice 4</a></li>
         <li><a href="calculatrice.html">Exercice 5</a></li>
-        <li><a href="MasterMind.html">Exercice 6</a></li>
+        <li><a class="active" href="MasterMind.html">Exercice 6</a></li>
         <li><a href="contact.html">Contact</a></li>
     
       </ul>
@@ -123,38 +67,52 @@ div {
     
 </div>
 
- <div id="articles">
-<h2>Liste des produits</h2>
+    <div class="page" style="margin-top: 10px;">
+        <h1>
+            MasterMind
+        </h1>
+        <div>
+          &nbsp;
+        </div>
+        <div class="game">
+            <table>
+                <tbody id="plateau">
 
-    
-    
-<table style="width:100%">
-  <tr>
-    <th>Ref.Produit</th>
-    <th>Libéllé</th> 
-    <th>Qté</th>
-  </tr>
-  <tr>
-    <td>21G223</td>
-    <td>Valve de Frein</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>22H241</td>
-    <td>Contacteur de Frein</td>
-    <td>22</td>
-  </tr>
-  <tr>
-    <td>52K635</td>
-    <td>Durite de turbo</td>
-    <td>30</td>
-  </tr>
-</table>
-</div>
+                </tbody>
+            </table>
+            <p>
+              &nbsp;
+            </p>
+            <table>
+                <tbody id="colorSelector">
 
+                </tbody>
+            </table>
+        </div>
+        <div class="options">
+
+            <div id="result" class="result">
+
+            </div>
+
+            <div class="menus">
+                <div class="menu" onclick="MasterMind.startGame('easy');">
+                    Jouer "Facile"
+                </div>
+                <div class="menu" onclick="MasterMind.startGame('normal');">
+                    Jouer "Normal"
+                </div>
+                <div class="menu" onclick="MasterMind.startGame('hard');">
+                    Jouer "Difficile"
+                </div>
+                <div class="menu" onclick="MasterMind.startGame('extreme');">
+                    Jouer "Extr&ecirc;me"
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
-<footer class="container">
+<footer class="container" style="background-color: black; margin-top: 40px;">
     <div class="table-row">
       <div class="table-cell">
         <address style="color: white;">
@@ -179,5 +137,4 @@ div {
     </div>
   
   </footer>
-
 </html>

@@ -129,12 +129,13 @@ let firstid,secondid,s1=0,s2=0,tour=1;
         else{
           s2+=1;
           document.getElementById("j2").innerHTML=s2;
-        }  
+        }  if (s1>s2 && images.length >= 16) { alert ("Mohamed is won !!"); } else if (s1<s2  && images.length >= 16) { alert ("Computer is won !!");} else { alert ("Med and Computer are equal !!"); }
       } //if (s1>s2) { document.getElementById("won1").innerHTML = "Mohamed is won !!"; } else if (s1<s2) { document.getElementById("won2").innerHTML = "Computer is won !!" ;} else { document.getElementById("equal").innerHTML = "Med and Computer are equal !!"; }
+       
       nbclic=0;
         
     } 
-      
+     
 }  // if (s1>s2) { alert ("Mohamed is won !!"); } else if (s1<s2) { alert ("Computer is won !!");} else { alert ("Med and Computer are equal !!"); }
 function hidephotos(){
   document.getElementById(firstid).src="back.png";
